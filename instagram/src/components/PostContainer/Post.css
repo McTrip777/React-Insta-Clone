@@ -1,0 +1,10 @@
+.imgUser{
+    display:flex;
+    flex-direction: column;
+}
+.postTitle{
+    display: flex;
+}
+.postThumb{
+
+}

@@ -1,15 +1,24 @@
 import React, { Component } from 'react';
 import './App.css';
+import dummyData from './dummy-data';
+import NavBar from './components/SearchBar/NavBar';
+import PostContent from './components/PostContainer/PostContent';
+
 
 class App extends Component {
-
+  constructor(){
+    super();
+    this.state ={
+      dummyData,
+    }
+  }
 
   render() {
     return (
       <div className='App'>
-
+        <NavBar />
+        <PostContent allData={this.state.dummyData}/>
       </div>
-
     );
   }
 }
