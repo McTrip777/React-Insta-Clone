@@ -1,9 +1,27 @@
+.post{
+    min-width:50rem;
+}
 .imgUser{
     display:flex;
     flex-direction: column;
+    width:40rem;
+    margin:0 auto;
+    border:1px solid grey;
+    margin-top:2rem;
+
 }
 .postTitle{
     display: flex;
+    align-items: center;
+}
+.postTitle h2{
+    margin-left:.5rem;
+}
+.postTitle img{
+    border-radius:50%;
+    height:3rem;
+    width:3rem;
+    padding:.5rem;
 }
 .postThumb{
 

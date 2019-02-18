@@ -3,6 +3,7 @@ import './App.css';
 import dummyData from './dummy-data';
 import NavBar from './components/SearchBar/NavBar';
 import PostContent from './components/PostContainer/PostContent';
+import CommentContent from './components/CommentSection/CommentContent';
 
 
 class App extends Component {
@@ -17,7 +18,8 @@ class App extends Component {
     return (
       <div className='App'>
         <NavBar />
-        <PostContent allData={this.state.dummyData}/>
+        <PostContent allData={this.state.dummyData} />
+        <CommentContent allData={this.state.dummyData} />
       </div>
     );
   }
