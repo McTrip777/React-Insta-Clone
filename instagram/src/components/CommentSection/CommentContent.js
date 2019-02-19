@@ -8,7 +8,7 @@ class CommentContent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      allData: props.allData
+      comments: props.comments
 
     };
   }
@@ -16,7 +16,9 @@ class CommentContent extends React.Component {
     return (
       <div className="commentContent">
         <CommentHead />
-        <Comments allData={this.state.allData}/>
+      {this.state.comments.map((comment, index) => 
+        <Comments key={index} comment={comment} />
+      )}        
         <CommentInput />
       </div>
     );

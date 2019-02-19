@@ -17,7 +17,7 @@ const Post = props => {
         <div>
             <img className="postPic" src={props.allData.imageUrl} alt="post picture" /> 
         </div>
-        <CommentContent allData={props.allData}/>
+        <CommentContent comments={props.allData.comments} />
       </div>
     )
 }
