@@ -8,20 +8,20 @@ import PostContent from './components/PostContainer/PostContent';
 class App extends Component {
   constructor(){
     super();
-    this.state ={
+    this.state =({
       dummyData:[],
-    }
+    })
   }
   componentDidMount(){
     this.setState({ dummyData: dummyData });
   }
 
   render() {
-    console.log(this.state.dummyData)
     return (
       <div className='App'>
         <NavBar />
-        <PostContent allData={this.state.dummyData} />  
+        <PostContent 
+        allData={this.state.dummyData} />  
       </div>
     );
   }

@@ -13,9 +13,10 @@
 .title i{
     margin:1rem;
 }
-.title h1{
-    padding: 0 1rem;
+.title img{
     border-left: 1px solid grey;
+    height:4rem;
+    padding-left:1rem;
 }
 
 .bar input{

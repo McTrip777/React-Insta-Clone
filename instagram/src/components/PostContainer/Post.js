@@ -2,19 +2,22 @@ import React, { Component } from 'react'
 import CommentContent from '../CommentSection/CommentContent';
 import CommentHead from '../CommentSection/CommentHead';
 import './Post.css'
+import PropTypes from 'prop-types';
+
 
 class Post extends Component {
     constructor(props){
         super(props);
-        this.setState = {
-            likes:props.allData.likes
-        }
+        this.setState = ({
+         
+        })
     }
+  
+    
 
-    // toggle = () => {
-        
-    // }
+
 render(){
+    console.log(this.props.allData)
     return (
       <div className='imgUser'>
         <div className='postTitle'>
@@ -29,12 +32,21 @@ render(){
             <img className="postPic" src={this.props.allData.imageUrl} alt="post picture" /> 
         </div>
         <div className='commentContent'>
-            <CommentHead likes={this.props.allData.likes} toggle={this.props.toggle} />
+            <CommentHead likes={this.props.allData.likes} />
             <CommentContent comments={this.props.allData.comments} />
         </div>
       </div>
     )
 }
 }
+
+Post.propTypes = {
+    allData: PropTypes.shape({
+      likes:PropTypes.number,
+      imageUrl:PropTypes.string,
+      thumbnailUrl:PropTypes.string,
+      username: PropTypes.string
+    })
+  };
 
 export default Post

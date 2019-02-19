@@ -3,11 +3,12 @@ import './NavBar.css'
 
 
 const NavBar = () => {
+  const logo = "https://files.slack.com/files-pri/T4JUEB3ME-FGA77UXLL/logo.png"
     return (
       <div className='bar'>
        <div className='title'> 
        <i className="fab fa-instagram fa-2x" />
-       <h1>Instagram</h1>
+       <img src={logo}/>
        </div>
        <div>
         <input type="text" placeholder="Search" />
