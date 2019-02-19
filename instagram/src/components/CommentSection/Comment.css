@@ -1,3 +1,31 @@
+
+.commentIcon{
+    text-align: left;
+    margin: 0 .5rem;
+}
+.commentIcon i{
+    padding:.7rem .4rem 0 0  
+}
+.commentIcon p{
+    margin: .5rem 0;
+}
+.commentContent{
+    
+}
+.comment{
+    border-bottom:1px solid grey;
+    margin: 0 .5rem;
+}
 .text{
     text-align: left;
+    padding-bottom:.5rem;
+}
+.commentInput{
+    text-align: left;
+}
+.commentInput input{
+    height:3rem;
+    width:99%;
+    border: none;
+    font-size: .9rem;
 }

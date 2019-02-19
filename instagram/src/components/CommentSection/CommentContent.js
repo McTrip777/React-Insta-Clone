@@ -16,9 +16,11 @@ class CommentContent extends React.Component {
     return (
       <div className="commentContent">
         <CommentHead />
+        <div className="comment">
       {this.state.comments.map((comment, index) => 
         <Comments key={index} comment={comment} />
       )}        
+        </div>
         <CommentInput />
       </div>
     );

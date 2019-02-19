@@ -1,9 +1,9 @@
 import React from 'react'
 
-const CommentInput = props => {
+const CommentInput = () => {
     return (
-      <div>
-        
+      <div className="commentInput">
+        <input type="text" placeholder="  Add a comment..." />
       </div>
     )
 }
