@@ -8,16 +8,16 @@ import PropTypes from 'prop-types';
 class Post extends Component {
     constructor(props){
         super(props);
-        this.setState = ({
-         
-        })
+        this.setState = {
+         likes: props.allData.likes
+        };
     }
-  
-    
-
+    incrementLike = () => {
+        let likes = this.state.likes + 1;
+        this.setState({ likes });
+      };
 
 render(){
-    console.log(this.props.allData)
     return (
       <div className='imgUser'>
         <div className='postTitle'>
@@ -32,12 +32,13 @@ render(){
             <img className="postPic" src={this.props.allData.imageUrl} alt="post picture" /> 
         </div>
         <div className='commentContent'>
-            <CommentHead likes={this.props.allData.likes} />
+            <CommentHead incrementLike={this.incrementLike} 
+            likes={this.props.allData.likes} />
             <CommentContent comments={this.props.allData.comments} />
         </div>
       </div>
     )
-}
+    }
 }
 
 Post.propTypes = {
