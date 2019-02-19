@@ -4,14 +4,23 @@ import CommentInput from './CommentInput';
 import Comments from './Comments';
 
 
-const CommentContent = () => {
+class CommentContent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      allData: props.allData
+
+    };
+  }
+  render() {
     return (
-      <div className="comments">
+      <div className="commentContent">
         <CommentHead />
-        <Comments />
+        <Comments allData={this.state.allData}/>
         <CommentInput />
       </div>
-    )
+    );
+  }
 }
 
 export default CommentContent

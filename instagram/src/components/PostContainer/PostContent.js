@@ -5,9 +5,10 @@ import './Post.css'
 const PostContent = props => {
     return (
       <div className='post'>
-        {props.allData.map(data => (
+        {props.allData.map((data) => (
           <Post key={data.imageUrl} allData={data}/>
         ))}
+        
       </div>
     )
 }

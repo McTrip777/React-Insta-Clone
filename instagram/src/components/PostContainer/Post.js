@@ -1,4 +1,6 @@
 import React from 'react'
+import CommentContent from '../CommentSection/CommentContent';
+
 import './Post.css'
 
 const Post = props => {
@@ -13,12 +15,9 @@ const Post = props => {
         <h2>{ props.allData.username }</h2>
         </div>
         <div>
-            <img
-                className="postPic"
-                src={props.allData.imageUrl}
-                alt="post picture"
-            /> 
+            <img className="postPic" src={props.allData.imageUrl} alt="post picture" /> 
         </div>
+        <CommentContent allData={props.allData}/>
       </div>
     )
 }
