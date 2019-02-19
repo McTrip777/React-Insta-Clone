@@ -9,16 +9,26 @@ class App extends Component {
   constructor(){
     super();
     this.state ={
-      dummyData,
+      dummyData:[],
+      on: false,
     }
   }
+  componentDidMount(){
+    this.setState({ dummyData: dummyData });
+  }
+
+  toggle = () => {
+    this.setState({
+      on:!this.state.on
+    })
+}
 
   render() {
     console.log(this.state.dummyData)
     return (
       <div className='App'>
         <NavBar />
-        <PostContent allData={this.state.dummyData} />  
+        <PostContent toggle={this.toggle} allData={this.state.dummyData} />  
       </div>
     );
   }

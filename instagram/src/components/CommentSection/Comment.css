@@ -1,31 +1,45 @@
 
 .commentIcon{
     text-align: left;
-    margin: 0 .5rem;
+}
+.heartComment{
+    text-align: start;
 }
 .commentIcon i{
-    padding:.7rem .4rem 0 0  
+    padding:.7rem .4rem 0 0;
+    height:1.5rem;
+    cursor: pointer;
 }
 .commentIcon p{
     margin: .5rem 0;
 }
+.commentIcon button{
+    border: none;
+    padding:none;
+    height:2rem;
+}
 .commentContent{
-    
+    margin: 0 .5rem;
+
 }
 .comment{
     border-bottom:1px solid grey;
-    margin: 0 .5rem;
 }
 .text{
     text-align: left;
     padding-bottom:.5rem;
 }
 .commentInput{
-    text-align: left;
+    width:39rem;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
 }
 .commentInput input{
     height:3rem;
-    width:99%;
+    width:35rem;
     border: none;
     font-size: .9rem;
+    
 }
