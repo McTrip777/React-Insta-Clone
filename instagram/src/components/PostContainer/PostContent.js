@@ -7,7 +7,7 @@ const PostContent = props => {
     return (
       <div className='post'>
         {props.allData.map((data) => (
-          <Post key={data.imageUrl} allData={data} toggle={props.toggle}/>
+          <Post key={data.imageUrl} allData={data} />
         ))}
       </div>
     )

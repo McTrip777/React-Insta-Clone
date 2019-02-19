@@ -1,14 +1,6 @@
 import React from 'react'
 
 const CommentHead = props => {
-
-  if(props.toggle === true){
-    props.likes = props.likes + 1
-  }
-  if(props.toggle === false){
-    props.likes = props.likes - 1
-  }
-
     return (
       <div className="commentIcon">
         <div className="heartComment">
