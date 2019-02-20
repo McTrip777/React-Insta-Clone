@@ -1,22 +1,24 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import CommentContent from '../CommentSection/CommentContent';
 import LikeSection from './LikeSection';
-import './Post.css'
+import './Post.css';
 import PropTypes from 'prop-types';
 
 
 class Post extends Component {
     constructor(props){
         super(props);
-        this.setState = {
+        this.state = {
          likes: props.post.likes,
         };
     }
-    
+
+
     incrementLike = () => {
-        let like = this.state.likes + 1;
-        this.setState({ like });
-      };
+        let likes = this.state.likes + 1;
+        this.setState({likes });
+    }
+
 
 render(){
     return (
@@ -34,10 +36,8 @@ render(){
             src={this.props.post.imageUrl} alt="post picture" /> 
         </div>
         <div className='commentContent'>
-            <LikeSection incrementLike={this.incrementLike} 
-            likes={this.props.post.likes} />
-            
-            
+            <LikeSection incrementLike={this.incrementLike}
+            likes={this.state.likes} />
             <CommentContent comments={this.props.post.comments} />
         </div>
       </div>
@@ -54,4 +54,4 @@ Post.propTypes = {
     })
   };
 
-export default Post
+export default Post;
