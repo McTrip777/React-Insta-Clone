@@ -1,13 +1,22 @@
 import React, { Component } from 'react';
 
-const authenticate = App => 
+const authenticate = App => LogIn =>
   class  extends Component {
+    constructor(){
+      super();
+      this.state=({
+        loggedIn:false,
+      })
+    }
+
+    toggleLogIn = () => this.setState ({ loggedIn: !this.state.loggedIn });
+
     render() {
-      return (
-        <div>
-          <App />
-        </div>    
-    )}
+        if (this.state.loggedIn){
+     return <App />;
+    }
+     return <LogIn toggleLogIn={this.toggleLogIn}/>;
+    }
   }
 
 

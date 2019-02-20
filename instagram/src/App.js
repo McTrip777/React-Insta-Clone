@@ -13,11 +13,10 @@ export class App extends Component {
   render() {
     return (
       <div>
-        <LogIn />
         <InstaPostPage />
       </div>
     )
   }
 }
 
-export default authenticate;
+export default authenticate(App)(LogIn);
