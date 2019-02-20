@@ -1,30 +1,23 @@
 import React, { Component } from 'react';
 import './App.css';
-import dummyData from './dummy-data';
-import NavBar from './components/SearchBar/NavBar';
-import PostContent from './components/PostContainer/PostContent';
+import authenticate from './components/Authentication/authenticate'
+import InstaPostPage from './components/PostContainer/InstaPostPage';
+import LogIn from './components/Login/LogIn'
 
-
-class App extends Component {
-  constructor(){
-    super();
-    this.state =({
-      dummyData:[],
-    })
-  }
-  componentDidMount(){
-    this.setState({ dummyData: dummyData });
-  }
-
+export class App extends Component {
+    constructor(){
+        super();
+        this.state = ({
+        });
+    }
   render() {
     return (
-      <div className='App'>
-        <NavBar />
-        <PostContent 
-        post={this.state.dummyData} />  
+      <div>
+        <LogIn />
+        <InstaPostPage />
       </div>
     )
   }
 }
 
-export default App;
+export default authenticate;
