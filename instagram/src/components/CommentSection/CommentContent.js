@@ -6,9 +6,27 @@ class CommentContent extends React.Component {
   constructor(props) {
     super(props);
     this.state = ({
-      comments: props.comments
+      comments: props.comments,
+      comment: ''
     });
   }
+
+  commentInput = e => {
+    this.setState({ comment: e.target.value });
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    const newComment = { 
+      username: 'jacobmcfaul', 
+      text: this.state.comment 
+    };
+    const comments = this.state.comments;
+    this.setState({ 
+      comments:[...comments, newComment],
+      comment:'',
+    });
+  };
 
   render() {
     return (
@@ -18,7 +36,10 @@ class CommentContent extends React.Component {
         <Comments  key={index} comment={comment} />
       )}        
         </div>
-        <CommentInput />
+        <CommentInput 
+        comment={this.state.comment}
+        submitComment={this.handleSubmit}
+        commentInput={this.commentInput}/>
       </div>
     );
   }

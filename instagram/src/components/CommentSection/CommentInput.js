@@ -1,26 +1,20 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class CommentInput extends Component{
-  constructor(props){
-    super(props);
-      this.setState =({
-
-      })
-  }
-
-  
-render(){
-    return (
-      <div className="commentInput">
+const CommentInput = (props) => {
+  return (
+     <form className="commentInput" onSubmit={props.submitComment}>
         <input 
         className='input'
         type="text" 
         placeholder="Add a comment..." 
+        value={props.comment}
+        onChange={props.commentInput}
+
         />
         <i className="fas fa-ellipsis-h"></i>
-      </div>
+      </form>
     )
 }
-}
+
 
 export default CommentInput

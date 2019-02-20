@@ -6,8 +6,8 @@ import './Post.css'
 const PostContent = props => {
     return (
       <div className='post'>
-        {props.allData.map((data) => (
-          <Post key={data.imageUrl} allData={data} />
+        {props.post.map((data) => (
+          <Post key={data.imageUrl} post={data} />
         ))}
       </div>
     )

@@ -21,9 +21,9 @@ class App extends Component {
       <div className='App'>
         <NavBar />
         <PostContent 
-        allData={this.state.dummyData} />  
+        post={this.state.dummyData} />  
       </div>
-    );
+    )
   }
 }
 

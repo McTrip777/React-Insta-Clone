@@ -9,12 +9,13 @@ class Post extends Component {
     constructor(props){
         super(props);
         this.setState = {
-         likes: props.allData.likes
+         likes: props.post.likes
         };
     }
+    
     incrementLike = () => {
-        let likes = this.state.likes + 1;
-        this.setState({ likes });
+        const like = this.state.likes + 1;
+        this.setState({ like });
       };
 
 render(){
@@ -23,18 +24,19 @@ render(){
         <div className='postTitle'>
         <img 
             className="postThumb"
-            src={this.props.allData.thumbnailUrl}
+            src={this.props.post.thumbnailUrl}
             alt="post thumbnail"
         />
-        <h2>{ this.props.allData.username }</h2>
+        <h2>{ this.props.post.username }</h2>
         </div>
         <div>
-            <img className="postPic" src={this.props.allData.imageUrl} alt="post picture" /> 
+            <img className="postPic" 
+            src={this.props.post.imageUrl} alt="post picture" /> 
         </div>
         <div className='commentContent'>
             <CommentHead incrementLike={this.incrementLike} 
-            likes={this.props.allData.likes} />
-            <CommentContent comments={this.props.allData.comments} />
+            likes={this.props.post.likes} />
+            <CommentContent comments={this.props.post.comments} />
         </div>
       </div>
     )
@@ -42,7 +44,7 @@ render(){
 }
 
 Post.propTypes = {
-    allData: PropTypes.shape({
+    post: PropTypes.shape({
       likes:PropTypes.number,
       imageUrl:PropTypes.string,
       thumbnailUrl:PropTypes.string,
