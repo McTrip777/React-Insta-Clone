@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import CommentContent from '../CommentSection/CommentContent';
-import CommentHead from '../CommentSection/CommentHead';
+import LikeSection from './LikeSection';
 import './Post.css'
 import PropTypes from 'prop-types';
 
@@ -9,12 +9,12 @@ class Post extends Component {
     constructor(props){
         super(props);
         this.setState = {
-         likes: props.post.likes
+         likes: props.post.likes,
         };
     }
     
     incrementLike = () => {
-        const like = this.state.likes + 1;
+        let like = this.state.likes + 1;
         this.setState({ like });
       };
 
@@ -34,8 +34,10 @@ render(){
             src={this.props.post.imageUrl} alt="post picture" /> 
         </div>
         <div className='commentContent'>
-            <CommentHead incrementLike={this.incrementLike} 
+            <LikeSection incrementLike={this.incrementLike} 
             likes={this.props.post.likes} />
+            
+            
             <CommentContent comments={this.props.post.comments} />
         </div>
       </div>
