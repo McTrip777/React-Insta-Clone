@@ -1,17 +1,32 @@
 import React from 'react'
+import styled from 'styled-components';
+
+
+const CommentForm = styled.form`
+  width:39rem;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+`;
+const CommentForm_Input = styled.input`
+  height:3rem;
+  width:35rem;
+  border: none;
+  font-size: .9rem;
+  `;
 
 const CommentInput = (props) => {
   return (
-     <form className="commentInput" onSubmit={props.submitComment}>
-        <input 
-        className='input'
+     <CommentForm onSubmit={props.submitComment}>
+        <CommentForm_Input 
         type="text" 
         placeholder="Add a comment..." 
         value={props.comment}
         onChange={props.commentInput}
         />
         <i className="fas fa-ellipsis-h"></i>
-      </form>
+      </CommentForm>
     )
 }
 

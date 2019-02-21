@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import CommentContent from '../CommentSection/CommentContent';
 import LikeSection from './LikeSection';
-import './Post.css';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -39,14 +38,10 @@ class Post extends Component {
          likes: props.post.likes,
         };
     }
-
-
     incrementLike = () => {
         let likes = this.state.likes + 1;
         this.setState({likes });
     }
-
-
 render(){
     return (
       <PostTab>
@@ -58,10 +53,10 @@ render(){
         <PostTitleH2>{ this.props.post.username }</PostTitleH2>
         </PostTitle>
         <div>
-            <img className="postPic" 
+            <img 
             src={this.props.post.imageUrl} alt="post picture" /> 
         </div>
-        <div className='commentContent'>
+        <div>
             <LikeSection incrementLike={this.incrementLike}
             likes={this.state.likes} />
             <CommentContent comments={this.props.post.comments} />

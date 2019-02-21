@@ -1,6 +1,15 @@
 import React from 'react'
 import CommentInput from './CommentInput';
 import Comments from './Comments';
+import styled from 'styled-components';
+
+const CommentContentStyle = styled.div`
+    margin: 0 .5rem;
+`;
+const CommentStyle = styled.div`
+  border-bottom:1px solid grey
+`;
+
 
 class CommentContent extends React.Component {
   constructor(props) {
@@ -30,17 +39,17 @@ class CommentContent extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="comment">
+      <CommentContentStyle>
+        <CommentStyle>
       {this.state.comments.map((comment, index) => 
         <Comments  key={index} comment={comment} />
       )}        
-        </div>
+        </CommentStyle>
         <CommentInput 
         comment={this.state.comment}
         submitComment={this.handleSubmit}
         commentInput={this.commentInput}/>
-      </div>
+      </CommentContentStyle>
     );
   }
 }
