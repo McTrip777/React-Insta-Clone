@@ -28,13 +28,12 @@ const LogInInput = styled.input`
     padding:1rem;
     margin-bottom:1rem;
     border-radius:1rem;
-    text-align: center;
     border: 2px solid black;
 `;
 
 const LogInButton = styled.button`
     color:black
-    font-size: 1.5rem
+    font-size: 1rem
     background-color: rgb(45, 45, 45)
     width:100%
     text-align: center

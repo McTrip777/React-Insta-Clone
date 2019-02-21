@@ -11,8 +11,8 @@ const CommentForm = styled.form`
 `;
 const CommentForm_Input = styled.input`
   height:3rem;
-  width:35rem;
-  border: none;
+  width:36.2rem;
+  border: 3px solid pink;
   font-size: .9rem;
   `;
 
@@ -21,7 +21,7 @@ const CommentInput = (props) => {
      <CommentForm onSubmit={props.submitComment}>
         <CommentForm_Input 
         type="text" 
-        placeholder="Add a comment..." 
+        placeholder="  Add a comment..." 
         value={props.comment}
         onChange={props.commentInput}
         />
