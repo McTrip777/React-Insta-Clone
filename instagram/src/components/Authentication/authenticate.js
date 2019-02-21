@@ -5,17 +5,27 @@ const authenticate = App => LogIn =>
     constructor(){
       super();
       this.state=({
-        loggedIn:false,
+        inputText:'',
       })
     }
 
-    toggleLogIn = () => this.setState ({ loggedIn: !this.state.loggedIn });
+    handleChanges = e => this.setState ({ inputText: e.target.value });
+
+    logIn = e => {
+      e.preventDefault();
+      window.localStorage.setItem('user', this.state.inputText);
+      window.location.reload();
+    }
 
     render() {
-        if (this.state.loggedIn){
+        if (localStorage.getItem('user')){
      return <App />;
     }
-     return <LogIn toggleLogIn={this.toggleLogIn}/>;
+     return <LogIn 
+     inputText={this.state.inputText} 
+     handleChanges={this.handleChanges} 
+     logIn={this.logIn}
+     />;
     }
   }
 
