@@ -36,7 +36,7 @@ class NavBar extends React.Component {
     super(props);
     this.state = ({
       post: this.props.post,
-      username:''
+      
     })
   }
   logo = "https://files.slack.com/files-pri/T4JUEB3ME-FGA77UXLL/logo.png";
@@ -46,26 +46,6 @@ class NavBar extends React.Component {
     window.localStorage.removeItem('user');
     window.location.reload();
   }
-
-  selectUser = e => {
-    this.setState({ username: e.target.value });
-  }
-
-  searchUser = e => {
-    e.preventDefault();
-    this.setState({
-      post: this.state.post.filter(item => {
-        if (e === item.username){
-        return {
-          item,
-        }
-       }
-       else{
-        return this.state.post;
-       }
-      })
-    })
-  };
 
   render(){
     return (
@@ -77,11 +57,13 @@ class NavBar extends React.Component {
        <div>
 
 
-      <form onSubmit={this.searchUser}>   
+      <form>   
         <NavBarInput 
           type="text" 
           placeholder="Search" 
-          onChange={this.selectUser} 
+          onChange={this.props.selectUser} 
+          value={this.props.search}
+          name='search'
         />
       </form>
 
