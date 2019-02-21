@@ -18,7 +18,7 @@ class InstaPostPage extends Component {
   render() {
     return (
       <div className='App'>
-        <NavBar />
+        <NavBar post={this.state.dummyData}/>
         <PostContent 
         post={this.state.dummyData} />  
       </div>
