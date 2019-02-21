@@ -3,6 +3,11 @@ import './App.css';
 import authenticate from './components/Authentication/authenticate'
 import InstaPostPage from './components/PostContainer/InstaPostPage';
 import LogIn from './components/Login/LogIn'
+import styled from 'styled-components';
+
+const AppContainer = styled.div`
+  text-align: center
+`;
 
 export class App extends Component {
     constructor(){
@@ -12,9 +17,9 @@ export class App extends Component {
     }
   render() {
     return (
-      <div>
+      <AppContainer>
         <InstaPostPage />
-      </div>
+      </AppContainer>
     )
   }
 }

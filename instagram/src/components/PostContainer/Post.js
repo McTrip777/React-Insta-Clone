@@ -3,6 +3,33 @@ import CommentContent from '../CommentSection/CommentContent';
 import LikeSection from './LikeSection';
 import './Post.css';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+const PostTab = styled.div`
+    display:flex;
+    flex-direction: column;
+    width:40rem;
+    margin:2rem auto;
+    border:1px solid grey;
+
+`;
+const PostTitle = styled.div`
+    display: flex;
+    align-items: center;
+
+`;
+
+const PostTitleH2 = styled.h2`
+    margin-left:.5rem
+`;
+
+const PostTitleImg = styled.img`
+    margin-left:.5rem
+    border-radius:50%;
+    height:3rem;
+    width:3rem;
+    padding:.5rem;
+`;
 
 
 class Post extends Component {
@@ -22,15 +49,14 @@ class Post extends Component {
 
 render(){
     return (
-      <div className='imgUser'>
-        <div className='postTitle'>
-        <img 
-            className="postThumb"
+      <PostTab>
+        <PostTitle>
+        <PostTitleImg
             src={this.props.post.thumbnailUrl}
             alt="post thumbnail"
-        />
-        <h2>{ this.props.post.username }</h2>
-        </div>
+        /> 
+        <PostTitleH2>{ this.props.post.username }</PostTitleH2>
+        </PostTitle>
         <div>
             <img className="postPic" 
             src={this.props.post.imageUrl} alt="post picture" /> 
@@ -40,7 +66,7 @@ render(){
             likes={this.state.likes} />
             <CommentContent comments={this.props.post.comments} />
         </div>
-      </div>
+      </PostTab>
     )
     }
 }

@@ -1,5 +1,13 @@
-import React from 'react'
+import React from 'react';
 import './NavBar.css'
+import styled from 'styled-components';
+
+const Bar = styled.div`
+display:flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1rem solid black;
+`;
 
 class NavBar extends React.Component {
   constructor(props){
@@ -37,7 +45,7 @@ class NavBar extends React.Component {
 
   render(){
     return (
-      <div className='bar'>
+      <Bar>
        <div className='title'> 
        <i onClick={this.logOut} className="fab fa-instagram fa-2x" />
        <img src={this.logo}/>
@@ -45,9 +53,9 @@ class NavBar extends React.Component {
        <div>
       <form onSubmit={this.props.submitComment}>   
         <input 
-        type="text" 
-        placeholder="Search" 
-        onClick={() => this.searchUser(this.props.post.username)} 
+          type="text" 
+          placeholder="Search" 
+          onClick={() => this.searchUser(this.props.post.username)} 
         />
       </form>
        </div>
@@ -56,7 +64,7 @@ class NavBar extends React.Component {
         <i className="far fa-heart fa-2x" /> 
         <i className="far fa-user fa-2x" /> 
        </div>
-      </div>
+      </Bar>
     );
 }
 }
