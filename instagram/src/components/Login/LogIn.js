@@ -14,22 +14,27 @@ class LogIn extends Component {
     return (
         <div className="loginPage">
         <h2 className="logTitle">Welcome! Please Log In</h2>
-        <form className="form">
+        <form onSubmit={this.props.logIn} className="form">
             <input 
             className ='logInput user' 
             onChange={this.props.handleChanges}
             type='text' 
             value={this.props.inputText}
             placeholder='Username' 
-            />
-
-            <input 
-            className ='logInput pass' 
-            type='text' 
-            placeholder='Password' 
+            name="inputText"
             />
         </form>
-         <button onClick={this.props.logIn}>Log in</button>
+        <form onSubmit={this.props.logIn} className="form">
+            <input 
+            className ='logInput pass' 
+            onChange={this.props.handleChanges}
+            type='text' 
+            value={this.props.password}
+            placeholder='Password' 
+            name='password'
+            />
+        </form>
+         <button onClick={this.props.logIn} type='submit'>Log in</button>
        </div>
     )
   }

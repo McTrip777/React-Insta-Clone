@@ -18,7 +18,7 @@ class CommentContent extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
     const newComment = { 
-      username: 'jacobmcfaul', 
+      username: localStorage.getItem('user'), 
       text: this.state.comment 
     };
     const comments = this.state.comments;
