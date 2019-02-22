@@ -57,7 +57,7 @@ class NavBar extends React.Component {
        <div>
 
 
-      <form>   
+      <form onChange={this.props.SearchMethod}>   
         <NavBarInput 
           type="text" 
           placeholder="Search" 

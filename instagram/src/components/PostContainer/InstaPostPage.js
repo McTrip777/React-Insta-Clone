@@ -17,23 +17,39 @@ class InstaPostPage extends Component {
   }
 
   selectUser = e => {
-    this.setState({ search: e.target.value.substr(0,20) });
+    this.setState({ search: e.target.value });
   }
 
-  render() {
+  SearchMethod = e =>{
+    e.preventDefault();
+  if (this.state.search === ""){
+    this.setState ({ 
+      dummyData,
+    })
+  }
+  else{
     let filteredPost = this.state.dummyData.filter(item => {
-      return item.username.indexOf(this.state.search) !== -1;
+      return item.username.includes(this.state.search);
     }
     );
+    this.setState({
+      dummyData: filteredPost,
+    })
+  }
+}
+
+  render() {
     return (
       <div>
-        <NavBar search={this.state.search} post={this.props.dummyData} selectUser={this.selectUser}/>
-        {filteredPost.map(item => {
-          return <PostContent 
-          item={item}
+        <NavBar search={this.state.search} 
+        post={this.state.dummyData} 
+        selectUser={this.selectUser}
+        SearchMethod={this.SearchMethod}
+        />
+        <PostContent 
           post={this.state.dummyData}   
-          key={item.username}/>
-        })}
+          key={dummyData.username}/>
+        
       </div> 
     )
   }
